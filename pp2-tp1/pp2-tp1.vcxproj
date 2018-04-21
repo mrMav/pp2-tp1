@@ -115,7 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CreationFunctions.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="UtilityFunctions.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CreationFunctions.h" />
+    <ClInclude Include="Types.h" />
+    <ClInclude Include="UtilityFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
