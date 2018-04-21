@@ -10,13 +10,19 @@ desc: prototypes for objecty creation functions
 
 #include "Types.h"
 
-// Creates and returns a pointer to a Node Struct
+/*
+Creates and returns a pointer to a Node Struct
+*/
 Node* createNode();
 
-// Creates and returns a pointer to a Row Struct
+/*
+Creates and returns a pointer to a Row Struct
+*/
 Row* createRow();
 
-// Creates and returns a pointer to a Matrix Struct
+/*
+Creates and returns a pointer to a Matrix Struct
+*/
 Matrix* createMatrix();
 
 #endif // !CREATIONFUNCTIONS
