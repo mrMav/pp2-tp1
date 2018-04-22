@@ -116,6 +116,9 @@ int validateOperation(Matrix* matrix) {
 		getchar();
 
 		isValid = validatePosition(ans, row, col, digit, matrix);
+
+		if (isValid == 0)
+			break;
 		
 	}
 

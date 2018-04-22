@@ -25,4 +25,19 @@ Creates and returns a pointer to a Matrix Struct
 */
 Matrix* createMatrix();
 
+/*
+Free Node Struct memory
+*/
+void freeNode(Node* n);
+
+/*
+Free Row Struct memory
+*/
+void freeRow(Row* r);
+
+/*
+Free Matrix Struct memory
+*/
+void freeMatrix(Matrix* m);
+
 #endif // !CREATIONFUNCTIONS

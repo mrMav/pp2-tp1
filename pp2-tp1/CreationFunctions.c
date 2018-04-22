@@ -53,3 +53,24 @@ Matrix* createMatrix() {
 	return m;
 
 };
+
+void freeNode(Node* n) {
+
+	free(n);
+	n = NULL;
+
+};
+
+void freeRow(Row* r) {
+
+	free(r);
+	r = NULL;
+
+};
+
+void freeMatrix(Matrix* m) {
+
+	free(m);
+	m = NULL;
+
+};

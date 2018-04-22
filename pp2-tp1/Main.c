@@ -41,25 +41,25 @@ int main() {
 
 		switch (opcao) {
 
-		// 0 exits the program
+			// 0 exits the program
 		case 0:
 
 			exit = 0;
 			break;
 
-		// 1 prints the matrix
+			// 1 prints the matrix
 		case 1:
-			
+
 			printMatrix(matrix);
 			break;
 
-		// 2 generates a new matrix
+			// 2 generates a new matrix
 		case 2:
 
 			matrix = createMatrix();
 			break;
 
-		// 3 makes the user validate an operation
+			// 3 makes the user validate an operation
 		case 3:
 		{
 			int isValid = validateOperation(matrix);
@@ -77,14 +77,15 @@ int main() {
 
 			break;
 		}
-			
+
 		}
 
 		printf("--------\n");
 
 	}
 
-	//cleanup();
+	// cleanup
+	freeMatrix(matrix);
 
 	return 0;
 
