@@ -18,7 +18,7 @@ void printLine(int size) {
 		printf("-");
 	}
 
-}
+};
 
 void printNode(Node* n) {
 
@@ -31,7 +31,7 @@ void printNode(Node* n) {
 };
 
 void printRow(Row* r) {
-	
+
 	for (int i = 0; i < COLUMNS_NUMBER; i++) {
 
 		printf(" ");
@@ -49,13 +49,13 @@ void printMatrix(Matrix* m) {
 	//print column labels
 	printf("| \\ |");
 	for (int i = 1; i < COLUMNS_NUMBER * (SEQUENCE_SIZE + 3); i++) {
-		
-		if((i) % (SEQUENCE_SIZE + 3) == 0) {
-		
+
+		if ((i) % (SEQUENCE_SIZE + 3) == 0) {
+
 			printf("|");
-		
+
 		}
-		else if((i + SEQUENCE_SIZE) % (SEQUENCE_SIZE + 3) == 0 ) {
+		else if ((i + SEQUENCE_SIZE) % (SEQUENCE_SIZE + 3) == 0) {
 
 			printf("%i", (i + SEQUENCE_SIZE) / (SEQUENCE_SIZE + 3));
 
@@ -68,28 +68,23 @@ void printMatrix(Matrix* m) {
 	}
 	printf("|\n");
 
-	//print a line
-	//printLine(5 + COLUMNS_NUMBER * (SEQUENCE_SIZE + 3));
-	//printf("\n");
-
 	for (int i = 0; i < ROWS_NUMBER; i++) {
 
 		printf("| %c |", 65 + i);
 		printRow(m->rows[i]);
 		printf("\n");
 	}
-	
+
 	printLine(5 + COLUMNS_NUMBER * (SEQUENCE_SIZE + 3));
-	
+
 	printf("\n");
-	
+
 };
 
 int randomInt(int min, int max) {
 
 	return rand() % (max - min) + min;
-
-}
+};
 
 int validateOperation(Matrix* matrix) {
 
@@ -102,10 +97,10 @@ int validateOperation(Matrix* matrix) {
 		int row, col, digit, ans;
 		char rowChar;
 
-		row   = randomInt(0, ROWS_NUMBER - 1);
-		col   = randomInt(0, COLUMNS_NUMBER - 1);
+		row = randomInt(0, ROWS_NUMBER - 1);
+		col = randomInt(0, COLUMNS_NUMBER - 1);
 		digit = randomInt(0, SEQUENCE_SIZE - 1);
-		
+
 		rowChar = 65 + row;
 
 		printf("Check %i out of %i.\n", i + 1, SECURITY_LEVEL);
@@ -117,14 +112,14 @@ int validateOperation(Matrix* matrix) {
 
 		isValid = validatePosition(ans, row, col, digit, matrix);
 
+		// break after one failed attempt
 		if (isValid == 0)
 			break;
-		
+
 	}
 
 	return isValid;
-
-}
+};
 
 int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
 
@@ -137,7 +132,7 @@ int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
 
 	// get the matrix digit in the given position
 	int matrixDigit = matrix->rows[row]->nodes[col]->sequence[digit];
-	
+
 	if (matrixDigit == ans) {
 
 		return 1;
@@ -149,4 +144,4 @@ int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
 
 	}
 
-}
+};

@@ -18,7 +18,7 @@ Node* createNode() {
 
 	for (int i = 0; i < SEQUENCE_SIZE; i++) {
 
-		n->sequence[i] = randomInt(0, 10);  //random number in the range of 0-9 inclusive
+		n->sequence[i] = randomInt(0, 10);
 
 	}
 
@@ -44,10 +44,10 @@ Matrix* createMatrix() {
 
 	Matrix* m = (Matrix*)malloc(sizeof(Matrix));
 
-	for(int i = 0; i < ROWS_NUMBER; i++) {
-	
+	for (int i = 0; i < ROWS_NUMBER; i++) {
+
 		m->rows[i] = createRow();
-	
+
 	}
 
 	return m;
