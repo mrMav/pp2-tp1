@@ -162,34 +162,34 @@ int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
 	if (matrix == NULL) {
 
 		printf("Matrix ptr was NULL.\n");
-		return -1;
+		return 0;
 	}
 
 	if (ans > 9 || ans < 0) {
 
 		printf("'ans' is out of the range 0-9.\n");
-		return -1;
+		return 0;
 
 	}
 
 	if (digit > 9 || digit < 0) {
 
 		printf("'digit' is out of the range 0-9.\n");
-		return -1;
+		return 0;
 
 	}
 
 	if (row > ROWS_NUMBER || row < 0) {
 
 		printf("'row' is out of the range 0-ROWS_NUMBER.\n");
-		return -1;
+		return 0;
 
 	}
 
 	if (col > COLUMNS_NUMBER || col < 0) {
 
 		printf("'col' is out of the range 0-COLUMNS_NUMBER.\n");
-		return -1;
+		return 0;
 
 	}
 

@@ -61,21 +61,23 @@ int main() {
 
 			// 3 makes the user validate an operation
 		case 3:
-		{
-			int isValid = validateOperation(matrix);
+			{
+				int isValid = validateOperation(matrix);
 
-			if (isValid) {
+				if (isValid) {
 
-				printf("Operation is valid.\n");
+					printf("Operation is valid.\n");
 
+				}
+				else {
+
+					printf("Wrong input, operation is cancelled!\n");
+
+				}
+
+				break;
 			}
-			else {
 
-				printf("Wrong input, operation is cancelled!\n");
-
-			}
-
-			break;
 		}
 
 		printf("--------\n");
