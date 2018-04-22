@@ -31,7 +31,7 @@ Prints information about the given matrix
 void printMatrix(Matrix* m);
 
 /*
-Returns number between min and max
+Returns number between min and max-1
 */
 int randomInt(int min, int max);
 
