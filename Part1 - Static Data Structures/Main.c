@@ -31,7 +31,6 @@ int main() {
 		printf("1. View Matrix\n");
 		printf("2. Generate a new Matrix\n");
 		printf("3. Validate an operation\n");
-		printf("4. Free Matrix memory\n");
 		
 		printf("> ");
 
@@ -77,12 +76,6 @@ int main() {
 			}
 
 			break;
-		}
-		case 4:
-
-			freeMatrix(&matrix);
-			break;
-
 		}
 
 		printf("--------\n");
