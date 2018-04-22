@@ -16,6 +16,15 @@ Node* createNode() {
 
 	Node* n = (Node*)malloc(sizeof(Node));
 
+	// error handling
+	if (n == NULL) {
+
+		printf("Falied to allocate memory for Node.\n");
+
+		return NULL;
+
+	}
+
 	for (int i = 0; i < SEQUENCE_SIZE; i++) {
 
 		n->sequence[i] = randomInt(0, 10);
@@ -30,6 +39,15 @@ Row* createRow() {
 
 	Row* r = (Row*)malloc(sizeof(Row));
 
+	// error handling
+	if (r == NULL) {
+
+		printf("Falied to allocate memory for Row.\n");
+
+		return NULL;
+
+	}
+
 	for (int i = 0; i < COLUMNS_NUMBER; i++) {
 
 		r->nodes[i] = createNode();
@@ -43,6 +61,15 @@ Row* createRow() {
 Matrix* createMatrix() {
 
 	Matrix* m = (Matrix*)malloc(sizeof(Matrix));
+
+	// error handling
+	if (m == NULL) {
+
+		printf("Falied to allocate memory for Matrix.\n");
+
+		return NULL;
+
+	}
 
 	for (int i = 0; i < ROWS_NUMBER; i++) {
 
