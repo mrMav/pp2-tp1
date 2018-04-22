@@ -20,7 +20,7 @@ int main() {
 	srand(10);
 
 	Matrix* matrix = createMatrix();  //creates and fills a card with random numbers
-
+	
 	// init program menu
 	int opcao = 0;
 	int exit = 1;
@@ -62,10 +62,23 @@ int main() {
 
 		// 3 makes the user validate an operation
 		case 3:
+		{
+			int isValid = validateOperation(matrix);
 
-			validateOperation(matrix);
+			if (isValid) {
+
+				printf("Operation is valid.\n");
+
+			}
+			else {
+
+				printf("Wrong input, operation is cancelled!\n");
+
+			}
+
 			break;
-
+		}
+			
 		}
 
 		printf("--------\n");

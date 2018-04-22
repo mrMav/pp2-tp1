@@ -5,6 +5,8 @@ date: 18/04/2018
 desc: implementation of utility functions
 */
 
+#define _CRT_SECURE_NO_WARNINGS 1
+
 #include <stdio.h>
 
 #include "Types.h"
@@ -53,9 +55,9 @@ void printMatrix(Matrix* m) {
 			printf("|");
 		
 		}
-		else if((i + 3) % (SEQUENCE_SIZE + 3) == 0 ) {
+		else if((i + SEQUENCE_SIZE) % (SEQUENCE_SIZE + 3) == 0 ) {
 
-			printf("%i", (i + 3) / (SEQUENCE_SIZE + 3));
+			printf("%i", (i + SEQUENCE_SIZE) / (SEQUENCE_SIZE + 3));
 
 		}
 		else {
@@ -85,41 +87,63 @@ void printMatrix(Matrix* m) {
 
 int randomInt(int min, int max) {
 
-	int r = (rand() % max) + min;
+	return rand() % (max - min) + min;
 
-	return r;
 }
 
 int validateOperation(Matrix* matrix) {
 
 	int isValid = 0;
 
+	printf("Please validate the operation using your Matrix Card.\n");
+
 	for (int i = 0; i < SECURITY_LEVEL; i++) {
 
-		int row, col, digit;
+		int row, col, digit, ans;
 		char rowChar;
 
-		row   = randomInt(0, ROWS_NUMBER);
-		col   = randomInt(0, COLUMNS_NUMBER);
-		digit = randomInt(0, SEQUENCE_SIZE);
+		row   = randomInt(0, ROWS_NUMBER - 1);
+		col   = randomInt(0, COLUMNS_NUMBER - 1);
+		digit = randomInt(0, SEQUENCE_SIZE - 1);
 		
 		rowChar = 65 + row;
 
-		printf("Please input the corresponding digit in the cell %c%i, position %i:\n", rowChar, col, digit + 1);
+		printf("Check %i out of %i.\n", i + 1, SECURITY_LEVEL);
+		printf("Please input the corresponding digit in the cell %c%i, position %i:\n", rowChar, col + 1, digit + 1);
 		printf("> ");
 
-		//isValid = validatePosition(row, col, digit, matrix);
+		scanf("%i", &ans);
+		getchar();
 
-		if (isValid == 0) {
-
-			printf("Wrong input. Canceling the transaction.\n");
-
-			break;
-			
-		}
-
+		isValid = validatePosition(ans, row, col, digit, matrix);
+		
 	}
 
 	return isValid;
+
+}
+
+int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
+
+	// digits should be only between 0-9 inclusive
+	if (ans > 9 || ans < 0) {
+
+		return 0;
+
+	}
+
+	// get the matrix digit in the given position
+	int matrixDigit = matrix->rows[row]->nodes[col]->sequence[digit];
+	
+	if (matrixDigit == ans) {
+
+		return 1;
+
+	}
+	else {
+
+		return 0;
+
+	}
 
 }

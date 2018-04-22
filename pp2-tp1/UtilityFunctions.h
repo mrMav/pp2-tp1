@@ -31,14 +31,19 @@ Prints information about the given matrix
 void printMatrix(Matrix* m);
 
 /*
-Retorna int entre min e max
+Returns number between min and max-1
 */
 int randomInt(int min, int max);
 
 /*
-Asks user to input matrix card data and validates transaction.
+Asks user to input matrix card data and validates operation.
 Returns 1 if sucessfull, 0 otherwise.
 */
 int validateOperation(Matrix* matrix);
+
+/*
+Checks if given digit is correct
+*/
+int validatePosition(int ans, int row, int col, int digit, Matrix* matrix);
 
 #endif // !UTILITYFUNCTIONS
