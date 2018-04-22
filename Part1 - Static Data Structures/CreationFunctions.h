@@ -28,16 +28,16 @@ Matrix* createMatrix();
 /*
 Free Node Struct memory
 */
-void freeNode(Node* n);
+void freeNode(Node** n);
 
 /*
 Free Row Struct memory
 */
-void freeRow(Row* r);
+void freeRow(Row** r);
 
 /*
 Free Matrix Struct memory
 */
-void freeMatrix(Matrix* m);
+void freeMatrix(Matrix** m);
 
 #endif // !CREATIONFUNCTIONS

@@ -81,23 +81,23 @@ Matrix* createMatrix() {
 
 };
 
-void freeNode(Node* n) {
+void freeNode(Node** n) {
 
-	free(n);
-	n = NULL;
-
-};
-
-void freeRow(Row* r) {
-
-	free(r);
-	r = NULL;
+	free(*n);
+	*n = NULL;
 
 };
 
-void freeMatrix(Matrix* m) {
+void freeRow(Row** r) {
 
-	free(m);
-	m = NULL;
+	free(*r);
+	*r = NULL;
 
+};
+
+void freeMatrix(Matrix** m) {
+
+	free(*m);
+	*m = NULL;
+		
 };
