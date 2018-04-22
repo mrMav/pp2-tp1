@@ -22,6 +22,15 @@ void printLine(int size) {
 
 void printNode(Node* n) {
 
+	// error handling
+	if (n == NULL) {
+		
+		printf("Node ptr was NULL.\n");
+
+		return;
+
+	}
+
 	for (int i = 0; i < SEQUENCE_SIZE; i++) {
 
 		printf("%i", n->sequence[i]);
@@ -32,6 +41,15 @@ void printNode(Node* n) {
 
 void printRow(Row* r) {
 
+	// error handling
+	if (r == NULL) {
+
+		printf("Row ptr was NULL.\n");
+
+		return;
+
+	}
+
 	for (int i = 0; i < COLUMNS_NUMBER; i++) {
 
 		printf(" ");
@@ -41,6 +59,15 @@ void printRow(Row* r) {
 };
 
 void printMatrix(Matrix* m) {
+
+	// error handling
+	if (m == NULL) {
+
+		printf("Matrix ptr was NULL.\n");
+
+		return;
+
+	}
 
 	//print a line
 	printLine(5 + COLUMNS_NUMBER * (SEQUENCE_SIZE + 3));
@@ -88,6 +115,15 @@ int randomInt(int min, int max) {
 
 int validateOperation(Matrix* matrix) {
 
+	// error handling
+	if (matrix == NULL) {
+
+		printf("Matrix ptr was NULL.\n");
+
+		return -1;
+
+	}
+
 	int isValid = 0;
 
 	printf("Please validate the operation using your Matrix Card.\n");
@@ -123,10 +159,37 @@ int validateOperation(Matrix* matrix) {
 
 int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
 
-	// digits should be only between 0-9 inclusive
+	if (matrix == NULL) {
+
+		printf("Matrix ptr was NULL.\n");
+		return -1;
+	}
+
 	if (ans > 9 || ans < 0) {
 
-		return 0;
+		printf("'ans' is out of the range 0-9.\n");
+		return -1;
+
+	}
+
+	if (digit > 9 || digit < 0) {
+
+		printf("'digit' is out of the range 0-9.\n");
+		return -1;
+
+	}
+
+	if (row > ROWS_NUMBER || row < 0) {
+
+		printf("'row' is out of the range 0-ROWS_NUMBER.\n");
+		return -1;
+
+	}
+
+	if (col > COLUMNS_NUMBER || col < 0) {
+
+		printf("'col' is out of the range 0-COLUMNS_NUMBER.\n");
+		return -1;
 
 	}
 
