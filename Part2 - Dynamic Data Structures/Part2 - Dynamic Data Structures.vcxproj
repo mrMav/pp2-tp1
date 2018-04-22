@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{94145DBB-A57F-4E6D-A5AC-812C01BDDD62}</ProjectGuid>
-    <RootNamespace>pp2tp1</RootNamespace>
+    <ProjectGuid>{3E1FD090-A011-40B9-A522-7E92FC95860E}</ProjectGuid>
+    <RootNamespace>Part2DynamicDataStructures</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,14 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CreationFunctions.c" />
     <ClCompile Include="Main.c" />
-    <ClCompile Include="UtilityFunctions.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CreationFunctions.h" />
-    <ClInclude Include="Types.h" />
-    <ClInclude Include="UtilityFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
