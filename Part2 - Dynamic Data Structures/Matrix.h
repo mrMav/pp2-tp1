@@ -15,5 +15,15 @@ Number of columns in the Matrix Card
 */
 Node* buildMatrix();
 
+/*
+Resets the Matrix by populating the nodes with new random numbers
+*/
+void resetMatrix(Node* head);
+
+/*
+Print Matrix 1
+*/
+void printMatrix(Node* head);
+
 
 #endif // !MATRIX

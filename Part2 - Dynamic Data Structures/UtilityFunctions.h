@@ -21,9 +21,17 @@ Prints information about the given node
 void printNode(Node* n);
 
 /*
-Prints a list of Nodes starting in the given Node.
+Resets a Node by populating it with a new sequence
 */
-void printListOfNodes(Node* head);
+void resetNode(Node* n);
+
+/*
+Allows to perform a function in each node.
+It works by cycling through the linked list
+and calling the function given as a parameter.
+*/
+void forEachNode(Node* head, void(*f)(Node* n));
+
 
 /*
 Prints information about the given row

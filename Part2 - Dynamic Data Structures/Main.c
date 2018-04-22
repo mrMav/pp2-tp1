@@ -22,12 +22,73 @@ int main() {
 
 	Node* matrix = buildMatrix();
 	
-	printListOfNodes(matrix);
+	// init program menu
+	int option = 0;
+	int exit = 1;
 
-	printf("\n");
+	while (exit) {
 
-	getchar();
+		printf("Matrix Card\n");
+		printf("0. Exit\n");
+		printf("1. View Matrix\n");
+		printf("2. Reset Matrix\n");
+		printf("3. Validate an operation\n");
+
+		printf("> ");
+
+		scanf("%i", &option);
+		getchar();
+
+		printf("--------\n");
+
+		switch (option) {
+
+			// 0 exits the program
+		case 0:
+
+			exit = 0;
+			break;
+
+			// 1 prints the matrix
+		case 1:
+
+			printMatrix(matrix);
+			break;
+
+			// 2 generates a new matrix
+		case 2:
+
+			resetMatrix(matrix);
+			break;
+
+			// 3 makes the user validate an operation
+		case 3:
+		{
+			int isValid = 0;  // validateOperation(matrix);
+
+			if (isValid) {
+
+				printf("Operation is valid.\n");
+
+			}
+			else {
+
+				printf("Wrong input, operation is cancelled!\n");
+
+			}
+
+			break;
+		}
+
+		}
+
+		printf("--------\n");
+
+	}
+
+	// cleanup
+	//freeMatrix(&matrix);
 
 	return 0;
-
+	
 }

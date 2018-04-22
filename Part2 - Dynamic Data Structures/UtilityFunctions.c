@@ -31,15 +31,21 @@ void printNode(Node* n) {
 
 	}
 
-	printf("{ ");
-
 	for (int i = 0; i < SEQUENCE_SIZE; i++) {
 
-		printf("%i ", n->sequence[i]);
+		printf("%i", n->sequence[i]);
 
 	}
 
-	printf("}");
+};
+
+void resetNode(Node* n) {
+
+	for (int i = 0; i < SEQUENCE_SIZE; i++) {
+
+		n->sequence[i] = randomInt(0, 10);
+
+	}
 
 };
 
@@ -58,6 +64,22 @@ void printListOfNodes(Node* head) {
 	}
 
 }
+
+void forEachNode(Node* head, void(*f)(Node* n)) {
+
+	Node* n = head;
+
+	(*f)(n);
+
+	while (n->next != NULL) {
+
+		n = n->next;
+
+		(*f)(n);
+
+	}
+
+};
 
 //void printRow(Row* r) {
 //
