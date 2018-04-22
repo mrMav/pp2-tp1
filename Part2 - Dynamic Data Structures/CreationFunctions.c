@@ -19,7 +19,7 @@ Node* createNode() {
 	// error handling
 	if (n == NULL) {
 
-		printf("Falied to allocate memory for Node.\n");
+		printf("Failed to allocate memory for Node.\n");
 
 		return NULL;
 
