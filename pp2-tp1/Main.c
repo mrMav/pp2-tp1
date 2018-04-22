@@ -16,8 +16,7 @@ purpose: pp2-tp1, part 1, static data structures
 int main() {
 
 	// seed for random numbers
-	//srand(time(NULL));   // should only be called once
-	srand(10);
+	srand(time(NULL));   // should only be called once
 
 	Matrix* matrix = createMatrix();  //creates and fills a card with random numbers
 	
