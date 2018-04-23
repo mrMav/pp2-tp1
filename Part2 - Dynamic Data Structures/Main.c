@@ -65,7 +65,7 @@ int main() {
 			// 3 makes the user validate an operation
 		case 3:
 		{
-			int isValid = 0;  // validateOperation(matrix);
+			int isValid = validateOperation(matrix);
 
 			if (isValid) {
 

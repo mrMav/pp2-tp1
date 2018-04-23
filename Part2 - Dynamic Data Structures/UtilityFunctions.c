@@ -70,13 +70,19 @@ void forEachNode(Node* head, void(*f)(Node* n)) {
 
 	Node* n = head;
 
-	(*f)(n);
-
-	while (n->next != NULL) {
-
-		n = n->next;
+	int exit = 0;
+	
+	while (exit == 0) {
 
 		(*f)(n);
+		
+		n = n->next;
+
+		if (n == NULL) {
+
+			exit = 1;
+
+		}
 
 	}
 

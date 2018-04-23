@@ -5,6 +5,8 @@ date: 22/04/2018
 desc: functions to manipulate the matrix (linked list)
 */
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -207,5 +209,59 @@ int validatePosition(int ans, int row, int col, int pos, Node* head) {
 		}
 
 	}
+
+};
+
+int validateOperation(Node* head) {
+
+	// error handling
+	if (head == NULL) {
+
+		printf("Head ptr was NULL.\n");
+
+		return -1;
+
+	}
+
+	int isValid = 0;
+
+	printf("Please validate the operation using your Matrix Card.\n");
+
+	for (int i = 0; i < SECURITY_LEVEL; i++) {
+
+		int row, col, digit, ans;
+		char rowChar;
+
+		row = randomInt(0, ROWS_NUMBER - 1);
+		col = randomInt(0, COLUMNS_NUMBER - 1);
+		digit = randomInt(0, SEQUENCE_SIZE - 1);
+
+		rowChar = 65 + row;
+
+		printf("Check %i out of %i.\n", i + 1, SECURITY_LEVEL);
+		printf("Please input the corresponding digit in the cell %c%i, position %i:\n", rowChar, col + 1, digit + 1);
+		printf("> ");
+
+		scanf("%i", &ans);
+		getchar();
+
+		isValid = validatePosition(ans, row, col, digit, head);
+
+		// break after one failed attempt
+		if (isValid == 0) {
+
+			break;
+
+		}
+		else if (isValid == -1) {
+
+			printf("Something went wrong.\n");
+			break;
+
+		}
+
+	}
+
+	return isValid;
 
 };
