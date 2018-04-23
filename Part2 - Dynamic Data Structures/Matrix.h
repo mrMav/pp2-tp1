@@ -25,5 +25,16 @@ Print Matrix 1
 */
 void printMatrix(Node* head);
 
+/*
+Asks user to input matrix card data and validates operation.
+Returns 1 if sucessfull, 0 otherwise.
+*/
+int validateOperation(Node* head);
+
+/*
+Checks if given digit is correct
+*/
+int validatePosition(int ans, int row, int col, int pos, Node* head);
+
 
 #endif // !MATRIX

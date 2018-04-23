@@ -105,3 +105,43 @@ void printMatrix(Node* head) {
 	
 };
 
+int validatePosition(int ans, int row, int col, int pos, Node* head) {
+	
+	// current row and column being searched
+	int cRow = 0, cCol = 0;
+	int exit = 0, i = 0;
+
+	Node* n = head;
+
+	while (exit != 1) {
+
+		cCol = i % COLUMNS_NUMBER;
+		cRow = i / COLUMNS_NUMBER;
+
+		if (cRow == row && cCol == col) {
+
+			// check pos in node and return result (0 or 1)
+			printf("Found your pretty node... here it is: ");
+			printNode(n);
+			printf("\n");
+
+			exit = 1;
+
+		}
+		else {
+
+			n = n->next;
+			i++;
+
+		}
+
+		if (n == NULL) {
+
+			exit = 1;
+
+		}
+
+
+	}
+
+};
