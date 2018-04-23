@@ -93,7 +93,7 @@ int randomInt(int min, int max) {
 	return rand() % (max - min) + min;
 };
 
-int fetchDigit(char* string, Node* matrix) {
+int fetchDigit(char* string, Node* head) {
 
 	if (strlen(string) > 3) {
 
@@ -107,9 +107,7 @@ int fetchDigit(char* string, Node* matrix) {
 
 	col = string[1] - '0';
 	pos = string[2] - '0';
-
-	//printf("%i-%i\n", col, pos);
-
+	
 	if (toupper(string[0]) > 'Z') {
 
 		printf("Row out of range. Format: \"[A-Z][0-9][0-9]\".\n");
@@ -148,6 +146,38 @@ int fetchDigit(char* string, Node* matrix) {
 
 	printLine(2);
 
-	return matrix->rows[row]->nodes[col - 1]->sequence[pos - 1];
+	int cRow = 0;
+	int cCol = 0;
+	int i = 0;
+	int exit = 0;
+
+	Node* n = head;
+
+	while (exit != 1) {
+
+		cCol = (i % COLUMNS_NUMBER) + 1;
+		cRow = (i / COLUMNS_NUMBER) + 1;
+
+		if (cRow == row && cCol == col) {
+
+			return n->sequence[pos-1];
+
+		}
+		else {
+
+			n = n->next;
+			i++;
+
+		}
+
+		if (n == NULL) {
+
+			exit = 1;
+
+		}
+
+	}
+
+	return -1;
 
 };

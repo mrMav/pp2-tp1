@@ -107,13 +107,6 @@ void printMatrix(Node* head) {
 	
 };
 
-int performActionOnCell(int row, int col, Node* head, int(*callback)(Node* n)) {
-
-
-
-};
-
-
 int validatePosition(int ans, int row, int col, int pos, Node* head) {
 	
 	// error handling

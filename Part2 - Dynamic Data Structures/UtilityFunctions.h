@@ -29,6 +29,7 @@ void resetNode(Node* n);
 Allows to perform a function in each node.
 It works by cycling through the linked list
 and calling the function given as a parameter.
+Ver:https://stackoverflow.com/a/9413/5296964
 */
 void forEachNode(Node* head, void(*callback)(Node* n));
 
