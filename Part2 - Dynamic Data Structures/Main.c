@@ -39,7 +39,7 @@ int main() {
 		scanf("%i", &option);
 		getchar();
 
-		printf("--------\n");
+		printLine(10);
 
 		switch (option) {
 
@@ -82,7 +82,7 @@ int main() {
 
 		}
 
-		printf("--------\n");
+		printLine(10);
 
 	}
 

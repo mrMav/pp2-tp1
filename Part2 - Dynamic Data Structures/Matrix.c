@@ -47,7 +47,6 @@ void printMatrix(Node* head) {
 
 	//print a line
 	printLine(5 + COLUMNS_NUMBER * (SEQUENCE_SIZE + 3));
-	printf("\n");
 
 	//print column labels
 	printf("| \\ |");
@@ -103,8 +102,6 @@ void printMatrix(Node* head) {
 	}
 
 	printLine(5 + COLUMNS_NUMBER * (SEQUENCE_SIZE + 3));
-
-	printf("\n");
-
+	
 };
 
