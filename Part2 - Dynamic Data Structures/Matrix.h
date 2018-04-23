@@ -32,7 +32,7 @@ Returns 1 if sucessfull, 0 otherwise.
 int validateOperation(Node* head);
 
 /*
-Checks if given digit is correct
+Searches the matrix in search of the ans, at row, col and pos.
 */
 int validatePosition(int ans, int row, int col, int pos, Node* head);
 
