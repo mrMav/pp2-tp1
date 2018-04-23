@@ -17,6 +17,7 @@ void printLine(int size) {
 	for (int i = 0; i < size; i++) {
 		printf("-");
 	}
+	printf("\n");
 
 };
 
@@ -71,7 +72,6 @@ void printMatrix(Matrix* m) {
 
 	//print a line
 	printLine(5 + COLUMNS_NUMBER * (SEQUENCE_SIZE + 3));
-	printf("\n");
 
 	//print column labels
 	printf("| \\ |");
@@ -103,8 +103,6 @@ void printMatrix(Matrix* m) {
 	}
 
 	printLine(5 + COLUMNS_NUMBER * (SEQUENCE_SIZE + 3));
-
-	printf("\n");
 
 };
 

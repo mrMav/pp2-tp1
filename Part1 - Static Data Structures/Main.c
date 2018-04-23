@@ -17,7 +17,7 @@ int main() {
 
 	// seed for random numbers
 	srand(time(NULL));   // should only be called once
-
+	
 	Matrix* matrix = createMatrix();  //creates and fills a card with random numbers
 	
 	// init program menu
@@ -26,7 +26,7 @@ int main() {
 
 	while (exit) {
 
-		printf("Matrix Card\n");
+		printf("Matrix Card - Static Data Structures\n");
 		printf("0. Exit\n");
 		printf("1. View Matrix\n");
 		printf("2. Generate a new Matrix\n");
@@ -37,7 +37,7 @@ int main() {
 		scanf("%i", &option);
 		getchar();
 
-		printf("--------\n");
+		printLine(10);
 
 		switch (option) {
 
@@ -80,7 +80,7 @@ int main() {
 
 		}
 
-		printf("--------\n");
+		printLine(10);
 
 	}
 
