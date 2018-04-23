@@ -67,7 +67,7 @@ int main() {
 		{
 			int isValid = validateOperation(matrix);
 
-			if (isValid) {
+			if (isValid == 1) {
 
 				printf("Operation is valid.\n");
 

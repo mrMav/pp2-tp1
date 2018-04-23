@@ -210,6 +210,8 @@ int validatePosition(int ans, int row, int col, int pos, Node* head) {
 
 	}
 
+	return -1;
+
 };
 
 int validateOperation(Node* head) {
@@ -248,14 +250,8 @@ int validateOperation(Node* head) {
 		isValid = validatePosition(ans, row, col, digit, head);
 
 		// break after one failed attempt
-		if (isValid == 0) {
+		if (isValid != 1) {
 
-			break;
-
-		}
-		else if (isValid == -1) {
-
-			printf("Something went wrong.\n");
 			break;
 
 		}
