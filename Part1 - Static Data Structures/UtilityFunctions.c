@@ -8,6 +8,7 @@ desc: implementation of utility functions
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
+#include <string.h>
 
 #include "Types.h"
 #include "UtilityFunctions.h"
@@ -204,5 +205,62 @@ int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
 		return 0;
 
 	}
+
+};
+
+int fetchDigit(char* string, Matrix* matrix) {
+
+	if (strlen(string) > 3) {
+
+		printf("String size not allowed. Format: \"[A-Z][0-9][0-9]\".\n");
+
+		return -1;
+	}
+
+	if (toupper(string[0]) > 'Z') {
+
+		printf("Row out of range. Format: \"[A-Z][0-9][0-9]\".\n");
+
+		return -1;
+	}
+
+	if (toupper(string[1]) > '9' || (toupper(string[1]) < '0')) {
+
+		printf("Column out of range. Format: \"[A-Z][0-9][0-9]\".\n");
+
+		return -1;
+	}
+
+	if (toupper(string[2]) > '9' || (toupper(string[2]) < '0')) {
+
+		printf("Position out of range. Format: \"[A-Z][0-9][0-9]\".\n");
+
+		return -1;
+	}
+	
+	printLine(2);
+
+	int row, col, pos;
+	char rowChar;
+
+	col = string[1] - '0';
+	pos = string[2] - '0';
+
+	rowChar = toupper(string[0]);
+	row = rowChar - 65;
+
+	if (row >= ROWS_NUMBER) {
+
+		printf("Row out of range. Format: \"[A-Z][0-9][0-9]\".\n");
+
+		return -1;
+
+	}
+
+	printf("Fetching digit in %c%i-%i...\n", rowChar, col, pos);
+
+	printLine(2);
+
+	return matrix->rows[row]->nodes[col]->sequence[pos];
 
 };

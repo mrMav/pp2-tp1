@@ -78,6 +78,24 @@ int main() {
 				break;
 			}
 
+			// 4 allows to check a digit in the given position (easter egg)
+		case 4:
+		{
+			char string[50];
+			int digit;
+
+			printf("Input sequence, format: \"[A-Z][0-9][0-9]\"\n");
+
+			scanf("%s", string);
+			getchar();
+
+			digit = fetchDigit(string, matrix);
+
+			printf("Fetched digit: %i.\n", digit);
+
+			break;
+		}
+
 		}
 
 		printLine(10);

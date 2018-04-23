@@ -46,4 +46,10 @@ Checks if given digit is correct
 */
 int validatePosition(int ans, int row, int col, int digit, Matrix* matrix);
 
+/*
+Fetchs a digit by string input in the form 'a1-2'
+Only supported in matrixs up to 9 columns, rows up to z, sequence_size up to 9
+*/
+int fetchDigit(char* string, Matrix* matrix);
+
 #endif // !UTILITYFUNCTIONS
