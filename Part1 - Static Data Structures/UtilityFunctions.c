@@ -156,7 +156,7 @@ int validateOperation(Matrix* matrix) {
 	return isValid;
 };
 
-int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
+int validatePosition(int ans, int row, int col, int pos, Matrix* matrix) {
 
 	if (matrix == NULL) {
 
@@ -171,7 +171,7 @@ int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
 
 	}
 
-	if (digit > 9 || digit < 0) {
+	if (pos > 9 || pos < 0) {
 
 		printf("'digit' is out of the range 0-9.\n");
 		return 0;
@@ -193,7 +193,7 @@ int validatePosition(int ans, int row, int col, int digit, Matrix* matrix) {
 	}
 
 	// get the matrix digit in the given position
-	int matrixDigit = matrix->rows[row]->nodes[col]->sequence[digit];
+	int matrixDigit = matrix->rows[row]->nodes[col]->sequence[pos];
 
 	if (matrixDigit == ans) {
 
