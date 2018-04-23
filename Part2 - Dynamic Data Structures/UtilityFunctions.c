@@ -156,7 +156,9 @@ int fetchDigit(char* string, Node* head) {
 	while (exit != 1) {
 
 		cCol = (i % COLUMNS_NUMBER) + 1;
-		cRow = (i / COLUMNS_NUMBER) + 1;
+		cRow = (i / COLUMNS_NUMBER);
+
+		//printf("Row: %i, Col: %i (looking for %i, %i)\n", cRow, cCol, row, col);
 
 		if (cRow == row && cCol == col) {
 
