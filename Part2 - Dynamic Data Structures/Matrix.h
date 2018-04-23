@@ -26,6 +26,11 @@ Print Matrix 1
 void printMatrix(Node* head);
 
 /*
+Perform an action in the given cell (row, col)
+*/
+int performActionOnCell(int row, int col, Node* head, int(*callback)(Node* n));
+
+/*
 Asks user to input matrix card data and validates operation.
 Returns 1 if sucessfull, 0 otherwise.
 */
