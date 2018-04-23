@@ -212,10 +212,18 @@ int fetchDigit(char* string, Matrix* matrix) {
 
 	if (strlen(string) > 3) {
 
-		printf("String size not allowed. Format: \"[A-Z][0-9][0-9]\".\n");
+		printf("String size not allowed. Format: \"[A-Z][1-9][1-9]\".\n");
 
 		return -1;
 	}
+
+	int row, col, pos;
+	char rowChar;
+
+	col = string[1] - '0';
+	pos = string[2] - '0';
+
+	//printf("%i-%i\n", col, pos);
 
 	if (toupper(string[0]) > 'Z') {
 
@@ -224,14 +232,14 @@ int fetchDigit(char* string, Matrix* matrix) {
 		return -1;
 	}
 
-	if (toupper(string[1]) > '9' || (toupper(string[1]) < '0')) {
+	if (col > 9 || col < 1) {
 
 		printf("Column out of range. Format: \"[A-Z][0-9][0-9]\".\n");
 
 		return -1;
 	}
 
-	if (toupper(string[2]) > '9' || (toupper(string[2]) < '0')) {
+	if (pos > 9 || pos < 1) {
 
 		printf("Position out of range. Format: \"[A-Z][0-9][0-9]\".\n");
 
@@ -239,19 +247,13 @@ int fetchDigit(char* string, Matrix* matrix) {
 	}
 	
 	printLine(2);
-
-	int row, col, pos;
-	char rowChar;
-
-	col = string[1] - '0';
-	pos = string[2] - '0';
-
+	
 	rowChar = toupper(string[0]);
 	row = rowChar - 65;
 
 	if (row >= ROWS_NUMBER) {
 
-		printf("Row out of range. Format: \"[A-Z][0-9][0-9]\".\n");
+		printf("Row out of range.\n");
 
 		return -1;
 
@@ -261,6 +263,6 @@ int fetchDigit(char* string, Matrix* matrix) {
 
 	printLine(2);
 
-	return matrix->rows[row]->nodes[col]->sequence[pos];
+	return matrix->rows[row]->nodes[col-1]->sequence[pos-1];
 
 };

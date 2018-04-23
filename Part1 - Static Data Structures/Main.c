@@ -31,13 +31,12 @@ int main() {
 		printf("1. View Matrix\n");
 		printf("2. Generate a new Matrix\n");
 		printf("3. Validate an operation\n");
+		printLine(10);
 		
 		printf("> ");
 
 		scanf("%i", &option);
 		getchar();
-
-		printLine(10);
 
 		switch (option) {
 
