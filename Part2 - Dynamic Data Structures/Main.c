@@ -22,10 +22,6 @@ int main() {
 
 	Node* matrix = buildMatrix();
 	
-	validatePosition(0, 0, 0, 0, matrix);
-	validatePosition(0, 0, 1, 0, matrix);
-	validatePosition(0, 0, 2, 0, matrix);
-
 	// init program menu
 	int option = 0;
 	int exit = 1;

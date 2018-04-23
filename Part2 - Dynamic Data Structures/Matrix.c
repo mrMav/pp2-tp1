@@ -107,25 +107,86 @@ void printMatrix(Node* head) {
 
 int validatePosition(int ans, int row, int col, int pos, Node* head) {
 	
-	// current row and column being searched
-	int cRow = 0, cCol = 0;
-	int exit = 0, i = 0;
+	// error handling
+	if (head == NULL) {
 
+		printf("head node was null.\n");
+
+		return -1;
+
+	}
+
+	if (ans > 9 || ans < 0) {
+
+		printf("Ans out of range: %i (0-9)\n", ans);
+
+		return -1;
+
+	}
+
+	if (row > ROWS_NUMBER - 1 || row < 0) {
+
+		printf("Row out of range: %i (0-%i)\n", row, ROWS_NUMBER - 1);
+		
+		return -1;
+
+	}
+
+	if (col > COLUMNS_NUMBER - 1 || col < 0) {
+
+		printf("Column out of range: %i (0-%i)\n", col, COLUMNS_NUMBER - 1);
+
+		return -1;
+
+	}
+
+	if (pos > SEQUENCE_SIZE - 1 || row < 0) {
+
+		printf("Position out of range: %i (0-%i)\n", row, SEQUENCE_SIZE - 1);
+
+		return -1;
+
+	}
+	// end of error handling, assume all args are valid
+
+
+	// current row being searched
+	int cRow = 0;
+	
+	// current col being searched
+	int cCol = 0;
+
+	// count of searched nodes
+	int i = 0;
+
+	// loop exit flag
+	int exit = 0;
+
+	// current node
 	Node* n = head;
 
 	while (exit != 1) {
 
+		// get the col and row arithmetically
 		cCol = i % COLUMNS_NUMBER;
 		cRow = i / COLUMNS_NUMBER;
 
+		// if we reached the col and row of the args
+		// it means we found the node were to search
+		// the ans
 		if (cRow == row && cCol == col) {
 
 			// check pos in node and return result (0 or 1)
-			printf("Found your pretty node... here it is: ");
-			printNode(n);
-			printf("\n");
+			if (n->sequence[pos] == ans) {
 
-			exit = 1;
+				return 1;
+
+			}
+			else {
+
+				return 0;
+
+			}
 
 		}
 		else {
@@ -135,12 +196,15 @@ int validatePosition(int ans, int row, int col, int pos, Node* head) {
 
 		}
 
+		// break case.
+		// if we reached this far, something went wrong
+		// we searched all the nodes and the col and row
+		// never matched the ones from the args.
 		if (n == NULL) {
 
 			exit = 1;
 
 		}
-
 
 	}
 
