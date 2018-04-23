@@ -31,15 +31,16 @@ int main() {
 		printf("Matrix Card - Dynamic Data Structures\n");
 		printf("0. Exit\n");
 		printf("1. View Matrix\n");
-		printf("2. Reset Matrix\n");
+		printf("2. Reset the Matrix\n");
 		printf("3. Validate an operation\n");
+
+		printLine(10);
 
 		printf("> ");
 
 		scanf("%i", &option);
 		getchar();
 
-		printLine(10);
 
 		switch (option) {
 
