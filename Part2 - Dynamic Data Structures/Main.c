@@ -97,15 +97,21 @@ int main() {
 
 			break;
 		}
+		//case 5:
 
-		}
+		//	printf(" matrix->next value: %#010x\n", matrix->next);
+		//	printf("&matrix->next value: %#010x\n", &(matrix->next));
+
+		//	freeMatrix(&matrix);
+
+		//}
 
 		printLine(10);
 
 	}
 
 	// cleanup
-	//freeMatrix(&matrix);
+	//freeMatrix(matrix);
 
 	return 0;
 	
