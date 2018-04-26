@@ -50,12 +50,14 @@ int main() {
 		case 1:
 
 			printMatrix(matrix);
+			option = -1;
 			break;
 
 			// 2 generates a new matrix
 		case 2:
 
 			matrix = createMatrix();
+			option = -1;
 			break;
 
 			// 3 makes the user validate an operation
@@ -74,6 +76,7 @@ int main() {
 
 				}
 
+				option = -1;
 				break;
 			}
 
@@ -92,8 +95,13 @@ int main() {
 
 			printf("Fetched digit: %i.\n", digit);
 
+			option = -1;
 			break;
 		}
+		
+		default:
+
+			printf("Invalid selection. No action performed.\n");
 
 		}
 
