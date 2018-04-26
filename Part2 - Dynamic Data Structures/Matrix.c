@@ -275,21 +275,15 @@ void freeMatrix(Node** head) {
 	Node* current = *head;
 	Node* next = NULL;
 
-	int i = 0;
 	int exit = 0;
 
 	while (exit == 0) {
 		
 		next = current->next;
 		
-		//printf("Releasing node %02i: ", i);
-		//printNode(current);
-		//printf("\n");
-		
 		free(current);
 		
 		current = next;
-		i++;
 
 		if (current == NULL) {
 
