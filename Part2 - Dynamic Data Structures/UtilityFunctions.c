@@ -42,6 +42,8 @@ void printNode(Node* n) {
 
 void resetNode(Node* n) {
 
+	if (n == NULL) return;
+
 	for (int i = 0; i < SEQUENCE_SIZE; i++) {
 
 		n->sequence[i] = randomInt(0, 10);

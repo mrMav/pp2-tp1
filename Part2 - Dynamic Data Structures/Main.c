@@ -23,7 +23,7 @@ int main() {
 	Node* matrix = buildMatrix();
 	
 	// init program menu
-	int option = 0;
+	int option = -1;
 	int exit = 1;
 
 	while (exit) {
@@ -54,12 +54,15 @@ int main() {
 		case 1:
 
 			printMatrix(matrix);
+
+			option = -1;
 			break;
 
 			// 2 generates a new matrix
 		case 2:
 
 			resetMatrix(matrix);
+			option = -1;
 			break;
 
 			// 3 makes the user validate an operation
@@ -78,6 +81,7 @@ int main() {
 
 			}
 
+			option = -1;
 			break;
 		}
 			// 4 allows to check a digit in the given position (easter egg)
@@ -95,23 +99,22 @@ int main() {
 
 			printf("Fetched digit: %i.\n", digit);
 
+			option = -1;
 			break;
 		}
-		//case 5:
 
-		//	printf(" matrix->next value: %#010x\n", matrix->next);
-		//	printf("&matrix->next value: %#010x\n", &(matrix->next));
+		default:
 
-		//	freeMatrix(&matrix);
+			printf("Invalid selection. No action performed.\n");
 
-		//}
+		}
 
 		printLine(10);
 
 	}
 
 	// cleanup
-	//freeMatrix(matrix);
+	freeMatrix(&matrix);
 
 	return 0;
 	

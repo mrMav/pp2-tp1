@@ -32,6 +32,11 @@ Node* buildMatrix() {
 
 void resetMatrix(Node* head) {
 
+	if (head == NULL) {
+		printf("head ptr was NULL.\n");
+		return;
+	}
+
 	forEachNode(head, resetNode);
 
 }
@@ -266,41 +271,37 @@ int validateOperation(Node* head) {
 
 };
 
-//void freeMatrix(Node** head) {
-//
-//	printf(" head value: %#010x\n", head);  // the memory adress to the head variable
-//	printf("*head value: %#010x\n", *head); // the memory adress of the node
-//	printf("&head value: %#010x\n", &head); // the memory adress of the local head variable
-//
-//	Node** current = head;
-//	Node** next = NULL;
-//
-//	int i = 0;
-//	int exit = 0;
-//
-//	while (exit == 0) {
-//		
-//		next = (*next)->next;
-//		
-//		printf("Releasing node %02i: ", i);
-//		printNode(*next);
-//		printf("\n");
-//		
-//		free(*next);
-//		*next = NULL;
-//
-//		next = n;
-//		i++;
-//
-//		printf(" n value: %i\n", n);
-//		printf("&n value: %i\n", &n);
-//
-//		if (n == NULL) {
-//
-//			exit = 1;
-//
-//		}
-//
-//	}
-//
-//};
+void freeMatrix(Node** head) {
+	
+	if (*head == NULL) return;
+
+	Node* current = *head;
+	Node* next = NULL;
+
+	int i = 0;
+	int exit = 0;
+
+	while (exit == 0) {
+		
+		next = current->next;
+		
+		//printf("Releasing node %02i: ", i);
+		//printNode(current);
+		//printf("\n");
+		
+		free(current);
+		
+		current = next;
+		i++;
+
+		if (current == NULL) {
+
+			exit = 1;
+
+		}
+
+	}
+
+	*head = NULL;
+
+};

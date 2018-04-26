@@ -40,6 +40,6 @@ int validatePosition(int ans, int row, int col, int pos, Node* head);
 /*
 Release memory of the matrix
 */
-//void freeMatrix(Node* head);
+void freeMatrix(Node* head);
 
 #endif // !MATRIX
