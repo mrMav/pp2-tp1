@@ -358,6 +358,8 @@ int saveMatrix(Node* head) {
 	fclose(f);
 	f = NULL;
 
+	printf("Save successful.\n");
+
 	return 1;
 
 }
@@ -402,6 +404,8 @@ Node* loadMatrix() {
 
 	fclose(f);
 	f = NULL;
+
+	printf("Load successful.\n");
 
 	return head;
 

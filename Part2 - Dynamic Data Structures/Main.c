@@ -33,6 +33,8 @@ int main() {
 		printf("1. View Matrix\n");
 		printf("2. Reset the Matrix\n");
 		printf("3. Validate an operation\n");
+		printf("4. Save matrix to file\n");
+		printf("5. Load matrix from file\n");
 
 		printLine(10);
 
@@ -84,8 +86,21 @@ int main() {
 			option = -1;
 			break;
 		}
-			// 4 allows to check a digit in the given position (easter egg)
+			// allows to save matrix to file
 		case 4:
+
+			saveMatrix(matrix);
+			break;
+
+			// allows to load matrix from file
+		case 5:
+
+			freeMatrix(&matrix);
+			matrix = loadMatrix();
+			break;
+
+			// 6 allows to check a digit in the given position (easter egg)
+		case 6:
 		{
 			char string[50];
 			int digit;
