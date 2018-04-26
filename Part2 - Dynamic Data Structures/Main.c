@@ -17,8 +17,8 @@ purpose: pp2-tp1, part 2, dynamic data structures
 int main() {
 
 	// seed for random numbers
-	//srand(time(NULL));   // should only be called once
-	srand(1);
+	srand(time(NULL));   // should only be called once
+	
 
 	Node* matrix = buildMatrix();
 	
