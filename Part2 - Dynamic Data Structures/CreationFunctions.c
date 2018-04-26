@@ -37,7 +37,7 @@ Node* createNode() {
 
 };
 
-Node* addNode(Node* head) {
+Node* addNode(Node* head, Node* toAdd) {
 
 	Node* n = head;
 
@@ -48,7 +48,16 @@ Node* addNode(Node* head) {
 	}
 		
 	//If n->next is NULL, we add a new node to the end of the list
-	n->next = createNode();
+	if (toAdd == NULL) {
+		
+		n->next = createNode();
+
+	}
+	else {
+
+		n->next = toAdd;
+
+	}
 
 	return n->next;
 

@@ -22,7 +22,7 @@ Node* buildMatrix() {
 
 	for (int i = 0; i < COLUMNS_NUMBER * ROWS_NUMBER - 1; i++) {
 
-		tail = addNode(head);
+		tail = addNode(head, NULL);
 
 	}
 
@@ -303,5 +303,106 @@ void freeMatrix(Node** head) {
 	}
 
 	*head = NULL;
+
+};
+
+int saveMatrix(Node* head) {
+
+	if (head == NULL) {
+
+		printf("head ptr was NULL.\n");
+		return -1;
+
+	}
+
+	FILE* f;
+	f = fopen("matrix.bin", "wb");
+
+	if (f == NULL) {
+
+		printf("Unable to open file.\n");
+		return -2;
+
+	}
+
+	Node* current = head;
+	Node* next = NULL;
+	int exit = 0;
+
+	while (exit == 0) {
+
+		next = current->next;
+
+		//null the next pointer so it doesnt get saved (break link)
+		current->next = NULL;
+
+		//positioning in file
+		fseek(f, 0, SEEK_END);
+
+		//write
+		fwrite(current, sizeof(Node), 1, f);
+
+		// restore link
+		current->next = next;
+		current = current->next;
+		next = NULL;
+
+		if (current == NULL) {
+
+			exit = 1;
+
+		}
+
+	}
+
+	fclose(f);
+	f = NULL;
+
+	return 1;
+
+}
+
+Node* loadMatrix() {
+
+	FILE* f;
+	f = fopen("matrix.bin", "rb");
+
+	if (f == NULL) {
+
+		printf("Unable to load file.\n");
+		return NULL;
+
+	}
+
+	Node* head = NULL;
+	Node* aux = createNode();
+
+	while (fread(aux, sizeof(Node), 1, f) != 0) {
+
+		// ensure that next is null
+		aux->next = NULL;
+
+		if (head == NULL) {
+
+			// this will only run once (for the first node)
+			head = aux;
+
+		}
+		else {
+
+			// add aux to the end of the list
+			addNode(head, aux);
+
+		}
+
+		// get a new, fresh, out-of-the-hoven memory block
+		aux = createNode();
+
+	}
+
+	fclose(f);
+	f = NULL;
+
+	return head;
 
 };

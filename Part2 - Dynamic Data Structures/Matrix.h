@@ -37,9 +37,18 @@ Searches the matrix in search of the ans, at row, col and pos.
 int validatePosition(int ans, int row, int col, int pos, Node* head);
 
 /*
-/*
 Release memory of the matrix
 */
 void freeMatrix(Node** head);
+
+/*
+Saves the matrix to a binary file
+*/
+int saveMatrix(Node* head);
+
+/*
+Load matrix from file
+*/
+Node* loadMatrix();
 
 #endif // !MATRIX
