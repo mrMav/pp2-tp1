@@ -17,8 +17,9 @@ Node* createNode();
 
 /*
 Adds a Node to the end of the list starting in the given Node.
+toAdd is the element to add. If NULL, a node will be created and inserted.
 */
-Node* addNode(Node* head);
+Node* addNode(Node* head, Node* toAdd);
 
 /*
 Free Node Struct memory

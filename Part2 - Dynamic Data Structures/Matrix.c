@@ -33,8 +33,10 @@ Node* buildMatrix() {
 void resetMatrix(Node* head) {
 
 	if (head == NULL) {
+
 		printf("head ptr was NULL.\n");
 		return;
+
 	}
 
 	forEachNode(head, resetNode);
@@ -47,7 +49,6 @@ void printMatrix(Node* head) {
 	if (head == NULL) {
 
 		printf("head ptr was NULL.\n");
-
 		return;
 
 	}
@@ -109,7 +110,6 @@ void printMatrix(Node* head) {
 			exit = 1;
 		}
 
-
 	}
 
 	printLine(5 + COLUMNS_NUMBER * (SEQUENCE_SIZE + 3));
@@ -122,7 +122,6 @@ int validatePosition(int ans, int row, int col, int pos, Node* head) {
 	if (head == NULL) {
 
 		printf("head node was null.\n");
-
 		return -1;
 
 	}
@@ -130,15 +129,13 @@ int validatePosition(int ans, int row, int col, int pos, Node* head) {
 	if (ans > 9 || ans < 0) {
 
 		printf("Ans out of range: %i (0-9)\n", ans);
-
 		return -1;
 
 	}
 
 	if (row > ROWS_NUMBER - 1 || row < 0) {
 
-		printf("Row out of range: %i (0-%i)\n", row, ROWS_NUMBER - 1);
-		
+		printf("Row out of range: %i (0-%i)\n", row, ROWS_NUMBER - 1);		
 		return -1;
 
 	}
@@ -146,7 +143,6 @@ int validatePosition(int ans, int row, int col, int pos, Node* head) {
 	if (col > COLUMNS_NUMBER - 1 || col < 0) {
 
 		printf("Column out of range: %i (0-%i)\n", col, COLUMNS_NUMBER - 1);
-
 		return -1;
 
 	}
@@ -154,12 +150,10 @@ int validatePosition(int ans, int row, int col, int pos, Node* head) {
 	if (pos > SEQUENCE_SIZE - 1 || row < 0) {
 
 		printf("Position out of range: %i (0-%i)\n", row, SEQUENCE_SIZE - 1);
-
 		return -1;
 
 	}
 	// end of error handling, assume all args are valid
-
 
 	// current row being searched
 	int cRow = 0;
@@ -229,7 +223,6 @@ int validateOperation(Node* head) {
 	if (head == NULL) {
 
 		printf("Head ptr was NULL.\n");
-
 		return -1;
 
 	}
@@ -243,9 +236,9 @@ int validateOperation(Node* head) {
 		int row, col, digit, ans;
 		char rowChar;
 
-		row = randomInt(0, ROWS_NUMBER - 1);
-		col = randomInt(0, COLUMNS_NUMBER - 1);
-		digit = randomInt(0, SEQUENCE_SIZE - 1);
+		row = randomInt(0, ROWS_NUMBER);
+		col = randomInt(0, COLUMNS_NUMBER);
+		digit = randomInt(0, SEQUENCE_SIZE);
 
 		rowChar = 65 + row;
 
@@ -273,7 +266,11 @@ int validateOperation(Node* head) {
 
 void freeMatrix(Node** head) {
 	
-	if (*head == NULL) return;
+	if (*head == NULL) {
+
+		return;
+
+	}
 
 	Node* current = *head;
 	Node* next = NULL;

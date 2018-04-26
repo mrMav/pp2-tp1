@@ -27,7 +27,6 @@ void printNode(Node* n) {
 	if (n == NULL) {
 
 		printf("Node ptr was NULL.\n");
-
 		return;
 
 	}
@@ -42,7 +41,11 @@ void printNode(Node* n) {
 
 void resetNode(Node* n) {
 
-	if (n == NULL) return;
+	if (n == NULL) {
+
+		return;
+
+	}
 
 	for (int i = 0; i < SEQUENCE_SIZE; i++) {
 
@@ -100,7 +103,6 @@ int fetchDigit(char* string, Node* head) {
 	if (strlen(string) > 3) {
 
 		printf("String size not allowed. Format: \"[A-Z][1-9][1-9]\".\n");
-
 		return -1;
 	}
 
@@ -113,21 +115,18 @@ int fetchDigit(char* string, Node* head) {
 	if (toupper(string[0]) > 'Z') {
 
 		printf("Row out of range. Format: \"[A-Z][0-9][0-9]\".\n");
-
 		return -1;
 	}
 
 	if (col > 9 || col < 1) {
 
 		printf("Column out of range. Format: \"[A-Z][0-9][0-9]\".\n");
-
 		return -1;
 	}
 
 	if (pos > 9 || pos < 1) {
 
 		printf("Position out of range. Format: \"[A-Z][0-9][0-9]\".\n");
-
 		return -1;
 	}
 
@@ -139,7 +138,6 @@ int fetchDigit(char* string, Node* head) {
 	if (row >= ROWS_NUMBER) {
 
 		printf("Row out of range.\n");
-
 		return -1;
 
 	}

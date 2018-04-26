@@ -28,7 +28,6 @@ void printNode(Node* n) {
 	if (n == NULL) {
 		
 		printf("Node ptr was NULL.\n");
-
 		return;
 
 	}
@@ -47,7 +46,6 @@ void printRow(Row* r) {
 	if (r == NULL) {
 
 		printf("Row ptr was NULL.\n");
-
 		return;
 
 	}
@@ -66,7 +64,6 @@ void printMatrix(Matrix* m) {
 	if (m == NULL) {
 
 		printf("Matrix ptr was NULL.\n");
-
 		return;
 
 	}
@@ -118,7 +115,6 @@ int validateOperation(Matrix* matrix) {
 	if (matrix == NULL) {
 
 		printf("Matrix ptr was NULL.\n");
-
 		return -1;
 
 	}
@@ -132,9 +128,9 @@ int validateOperation(Matrix* matrix) {
 		int row, col, digit, ans;
 		char rowChar;
 
-		row = randomInt(0, ROWS_NUMBER - 1);
-		col = randomInt(0, COLUMNS_NUMBER - 1);
-		digit = randomInt(0, SEQUENCE_SIZE - 1);
+		row = randomInt(0, ROWS_NUMBER);
+		col = randomInt(0, COLUMNS_NUMBER);
+		digit = randomInt(0, SEQUENCE_SIZE);
 
 		rowChar = 65 + row;
 
@@ -213,7 +209,6 @@ int fetchDigit(char* string, Matrix* matrix) {
 	if (strlen(string) > 3) {
 
 		printf("String size not allowed. Format: \"[A-Z][1-9][1-9]\".\n");
-
 		return -1;
 	}
 

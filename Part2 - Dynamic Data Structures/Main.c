@@ -17,8 +17,7 @@ purpose: pp2-tp1, part 2, dynamic data structures
 int main() {
 
 	// seed for random numbers
-	srand(time(NULL));   // should only be called once
-	
+	srand(time(NULL));   // should only be called once	
 
 	Node* matrix = buildMatrix();
 	
@@ -42,8 +41,7 @@ int main() {
 
 		scanf("%i", &option);
 		getchar();
-
-
+		
 		switch (option) {
 
 			// 0 exits the program
@@ -63,7 +61,17 @@ int main() {
 			// 2 generates a new matrix
 		case 2:
 
-			resetMatrix(matrix);
+			if (matrix == NULL) {
+
+				matrix = buildMatrix();
+
+			}
+			else {
+
+				resetMatrix(matrix);
+
+			}
+
 			option = -1;
 			break;
 
@@ -90,6 +98,8 @@ int main() {
 		case 4:
 
 			saveMatrix(matrix);
+
+			option = -1;
 			break;
 
 			// allows to load matrix from file
@@ -97,6 +107,8 @@ int main() {
 
 			freeMatrix(&matrix);
 			matrix = loadMatrix();
+
+			option = -1;
 			break;
 
 			// 6 allows to check a digit in the given position (easter egg)

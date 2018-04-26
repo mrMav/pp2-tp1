@@ -20,7 +20,6 @@ Node* createNode() {
 	if (n == NULL) {
 
 		printf("Failed to allocate memory for Node.\n");
-
 		return NULL;
 
 	}
@@ -43,7 +42,6 @@ Row* createRow() {
 	if (r == NULL) {
 
 		printf("Failed to allocate memory for Row.\n");
-
 		return NULL;
 
 	}
@@ -66,7 +64,6 @@ Matrix* createMatrix() {
 	if (m == NULL) {
 
 		printf("Failed to allocate memory for Matrix.\n");
-
 		return NULL;
 
 	}

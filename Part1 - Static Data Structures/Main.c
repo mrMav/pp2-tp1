@@ -50,6 +50,7 @@ int main() {
 		case 1:
 
 			printMatrix(matrix);
+
 			option = -1;
 			break;
 
@@ -57,6 +58,7 @@ int main() {
 		case 2:
 
 			matrix = createMatrix();
+
 			option = -1;
 			break;
 
@@ -92,7 +94,6 @@ int main() {
 			getchar();
 
 			digit = fetchDigit(string, matrix);
-
 			printf("Fetched digit: %i.\n", digit);
 
 			option = -1;
