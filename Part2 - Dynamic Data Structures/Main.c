@@ -114,6 +114,10 @@ int main() {
 			// 6 allows to check a digit in the given position (easter egg)
 		case 6:
 		{
+			printLine(2);
+			printf("Easter Egg Function! - Fetch Digit\n");
+			printLine(2);
+
 			char string[50];
 			int digit;
 
